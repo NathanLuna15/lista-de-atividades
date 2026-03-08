@@ -1,18 +1,22 @@
-function fatorial(fator){
-    let numeroFatorial = fator
-    let valor
-    let multiplicar = 1
-    let sequencia = ""
+function fatorial(fator) {
+    let numeroFatorial = Number(fator); // Garante que é um número
+    let multiplicar = 1;
+    let sequencia = "";
 
-    for (contador = numeroFatorial; contador >= 1; contador--) {
-        multiplicar = multiplicar * contador
-        sequencia = multiplicar + " X "
+    
+    for (let contador = numeroFatorial; contador >= 1; contador--) { 
+        multiplicar = multiplicar * contador;
+        sequencia = sequencia + contador;
+
+        if (contador > 1) {
+            sequencia = sequencia + " x ";
+        }
     }
-  
-    return sequencia 
 
+   
+    return `${numeroFatorial} é ${sequencia} = ${multiplicar}`;
 }
 
 module.exports = {
     fatorial
-}
+};
