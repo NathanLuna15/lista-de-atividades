@@ -7,7 +7,6 @@ const entradaDeDados = readline.createInterface({
 
 
 entradaDeDados.question("qual o mutiplicador ", function(tab){
-
     let tabuada = tab
 
     entradaDeDados.question("qual é o mutiplicador inicial ", function(valor0){
@@ -19,9 +18,16 @@ entradaDeDados.question("qual o mutiplicador ", function(tab){
                 let continuar = valor 
 
                     let calculos = require ("./modulo/calculoTB.js")
+                    let validar = require ("./modulo/validar.js")
 
-                    let resultado = calculos.tabuada(tabuada, mutiplicadorInicial, mutiplicadorFinal, continuar)
-                    console.log(resultado)
+                    let valido = validar.validarTB(tabuada, mutiplicadorInicial, mutiplicadorFinal, continuar)
+                    if(valido !== true){
+                        console.log(valido)
+                    }
+                        let resultado = calculos.tabuada(tabuada, mutiplicadorInicial, mutiplicadorFinal, continuar)
+                         console.log(resultado)
+                    
+                 
 
                     
             })
